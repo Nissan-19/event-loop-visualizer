@@ -1,12 +1,14 @@
-import React from 'react'
-
-function TaskQueue ()  {
+function TaskQueue() {
   return (
-    <div className="border rounded-lg p-2 border-purple-600 bg-purple-50 h-full " >
-      <h3 className="text-purple-500">
-        Task Queue are empty
+    <section className="h-full rounded-lg border border-orange-500/60 bg-orange-500/10 p-3 shadow-[inset_0_0_24px_rgba(249,115,22,0.05)]">
+      <h3 className="font-semibold text-orange-300">
+        Task Queue
       </h3>
-    </div>
+
+      <p className="mt-2 text-sm text-slate-400">
+        Queue is empty
+      </p>
+    </section>
   )
 }
 

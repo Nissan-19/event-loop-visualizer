@@ -35,12 +35,12 @@ function AppLayout (){
   }
 
   return (
-    <div>
+    <div className="min-h-screen bg-[#07111f] text-slate-100">
       
       <Header/>
       
       
-        <main className="grid grid-cols-1 items-start gap-2 p-2 lg:grid-cols-[23fr_57fr_20fr]">
+        <main className="mx-auto grid max-w-[1800px] grid-cols-1 items-start gap-3 p-3 lg:grid-cols-[23fr_57fr_20fr]">
           <div > 
             
             <CodePanel

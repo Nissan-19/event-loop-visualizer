@@ -1,12 +1,14 @@
-
-
-function CallStack  () {
+function CallStack() {
   return (
-    <div className="border rounded-lg p-2 border-green-600 bg-green-50 h-full" >
-      <h3 className="text-green-500">
-        stack is empty
+    <section className="h-full rounded-lg border border-sky-500/60 bg-sky-500/10 p-3 shadow-[inset_0_0_24px_rgba(14,165,233,0.05)]">
+      <h3 className="font-semibold text-sky-300">
+        Call Stack
       </h3>
-    </div>
+
+      <p className="mt-2 text-sm text-slate-400">
+        Stack is empty
+      </p>
+    </section>
   )
 }
 

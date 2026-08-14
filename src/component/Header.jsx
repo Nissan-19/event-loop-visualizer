@@ -1,30 +1,28 @@
 import logo from "../assets/images/logo.png"
 import LessonSelector from "./LessonSelector"
 
-function Header () {
-
-
+function Header() {
   return (
-    <header className="flex flex-wrap lg:flex-nowrap gap-3 mt-2 px-3 items-center">
+    <header className="flex flex-wrap items-center gap-3 border-b border-slate-800 bg-[#0b1628] px-4 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.18)] lg:flex-nowrap">
+      <img
+        className="h-10 w-10"
+        src={logo}
+        alt="Event Loop Visualizer logo"
+      />
 
-        <img    className="w-10 h-10"
-                src={logo} alt="Logo Image" />
-        <div className="ml-1">
-            <h1 className=" text-2xl font-semibold ">
-                Event Loop Visualizer
-            </h1>
-            <p className="text-sm font-extralight">
-                See how JavaScript executes code, one step at a time.
-            </p>
-        </div>
+      <div className="ml-1">
+        <h1 className="text-2xl font-semibold tracking-tight text-white">
+          Event Loop Visualizer
+        </h1>
 
-        <div className="order-3 w-full lg:order-0 lg:ml-6 lg:flex lg:min-w-0 lg:flex-1 lg:justify-center">
-            <LessonSelector/>
-        </div>
+        <p className="text-sm text-slate-400">
+          See how JavaScript executes code, one step at a time.
+        </p>
+      </div>
 
-        <button className="ml-auto shrink-0 rounded-md border border-slate-300 px-3 py-2 text-sm">
-            theme
-        </button>
+      <div className="order-3 w-full lg:order-0 lg:ml-6 lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
+        <LessonSelector />
+      </div>
     </header>
   )
 }

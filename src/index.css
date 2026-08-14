@@ -1,1 +1,61 @@
 @import "tailwindcss";
+
+:root { /*used for settings that should affect the entire application.*/
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, /* fallback list*/
+    "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%; /*making the application fit the screen */
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #07111f;
+}
+
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Active code-line animation */
+@keyframes active-line-sweep {
+  from {
+    background-size: 0% 100%;
+  }
+
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+.active-code-line {
+  color: #f8fafc;
+  background-image: linear-gradient( /* creating yellow gradielnt, linear gradient is gradual colour change from lleft to right*/
+    90deg,
+    rgba(247, 223, 30, 0.42),
+    rgba(247, 223, 30, 0.14)
+  );
+  background-position: left center; /*This anchors the animation to the left side*/
+  background-repeat: no-repeat; /* prevents repeat*/
+
+  box-shadow: inset 3px 0 0 #f7df1e; /* to create the solid yellow marker on  the left side*/
+
+  animation: active-line-sweep 450ms ease-out forwards; /*keyframe name, animation duration, slow down near the end, retain the final apperance */
+}
+
+/* Automatic accessibility fallback—no visible setting is added */
+@media (prefers-reduced-motion: reduce) {
+  .active-code-line {
+    background-size: 100% 100%;
+    animation: none;
+  }
+}

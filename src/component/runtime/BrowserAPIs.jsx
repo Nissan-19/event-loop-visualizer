@@ -1,12 +1,14 @@
-import React from 'react'
-
-const BrowserAPIs = () => {
+function BrowserAPIs() {
   return (
-    <div className="border rounded-lg p-2 border-blue-600 bg-blue-50 h-full " >
-      <h3 className="text-blue-500">
-        Browser APIs are empty
+    <section className="h-full rounded-lg border border-purple-500/60 bg-purple-500/10 p-3 shadow-[inset_0_0_24px_rgba(168,85,247,0.05)]">
+      <h3 className="font-semibold text-purple-300">
+        Browser APIs
       </h3>
-    </div>
+
+      <p className="mt-2 text-sm text-slate-400">
+        Browser APIs are empty
+      </p>
+    </section>
   )
 }
 

@@ -1,12 +1,14 @@
-import React from 'react'
-
-function MicrotaskQueue () {
+function MicrotaskQueue() {
   return (
-    <div className="border rounded-lg p-2 border-orange-600 bg-orange-50 h-full " >
-      <h3 className="text-orange-500">
-        MicroTasks is empty
+    <section className="h-full rounded-lg border border-cyan-500/60 bg-cyan-500/10 p-3 shadow-[inset_0_0_24px_rgba(6,182,212,0.05)]">
+      <h3 className="font-semibold text-cyan-300">
+        Microtask Queue
       </h3>
-    </div>
+
+      <p className="mt-2 text-sm text-slate-400">
+        Queue is empty
+      </p>
+    </section>
   )
 }
 
