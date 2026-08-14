@@ -22,6 +22,24 @@ function AppLayout (){
   const codeLines = functionCallLesson.codeLines
   const activeLineNumber = currentEvent === null ? null : currentEvent.lineNumber
 
+  const executedEvents = functionCallLesson.steps.slice(0,currentStep)//to save all the event that have been executed
+
+  const currentCallStack = []
+  executedEvents.forEach((event)=>{
+    if(event.type === "PUSH_STACK"){
+      currentCallStack.push(event.label)
+    } else if(event.type === "POP_STACK"){
+        currentCallStack.pop()
+      }
+  })
+
+  const currentConsoleOutput = []
+  executedEvents.forEach((event)=>{
+    if(event.type === "PRINT_CONSOLE"){
+      currentConsoleOutput.push(event.value)
+    }
+  })
+
   function handleStepIncrement(){
     setCurrentStep((previous)=>previous + 1)
   }
@@ -59,7 +77,9 @@ function AppLayout (){
           </div>
 
           <div >
-            <RuntimeBoard/>
+            <RuntimeBoard
+              currentCallStack = {currentCallStack}
+             />
             <StepExplanation
 
               currentExplanation= {currentExplanation}/>
@@ -67,7 +87,8 @@ function AppLayout (){
 
           <div >
             <GuessOutput/>
-            <ConsolePanel/>
+            <ConsolePanel
+              currentConsoleOutput = {currentConsoleOutput}/>
           </div>
         </main>
     </div>

@@ -37,6 +37,7 @@ textarea {
   }
 }
 
+
 .active-code-line {
   color: #f8fafc;
   background-image: linear-gradient( /* creating yellow gradielnt, linear gradient is gradual colour change from lleft to right*/
@@ -58,4 +59,30 @@ textarea {
     background-size: 100% 100%;
     animation: none;
   }
+
+  .console-typewriter {
+    width: var(--console-line-width);
+    animation: none;
+  }
+}
+
+@keyframes console-typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: var(--console-line-width);
+  }
+}
+
+.console-typewriter {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+
+  animation-name: console-typewriter;
+  animation-duration: var(--typing-duration);
+  animation-timing-function: steps(var(--character-count), end);
+  animation-fill-mode: forwards;
 }

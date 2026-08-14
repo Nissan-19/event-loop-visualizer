@@ -3,7 +3,7 @@ import BrowserAPIs from "./BrowserAPIs"
 import TaskQueue from "./TaskQueue"
 import MicrotaskQueue from "./MicrotaskQueue"
 
-function RuntimeBoard() {
+function RuntimeBoard({currentCallStack, }) {
   return (
     <section className="relative min-h-140 w-full overflow-hidden rounded-xl border border-slate-700 bg-[#0b1628] p-3 shadow-lg shadow-black/20">
       <h2 className="mb-3 font-semibold text-white">
@@ -16,7 +16,8 @@ function RuntimeBoard() {
         </div>
 
         <div className="col-start-1 col-end-3 row-start-2 row-end-6 h-full">
-          <CallStack />
+          <CallStack 
+            currentCallStack ={currentCallStack}/>
         </div>
 
         <div className="col-start-3 col-end-5 row-start-3 row-end-5 flex h-full items-center justify-center">
