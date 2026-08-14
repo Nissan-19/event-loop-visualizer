@@ -18,7 +18,11 @@ function CodePanel ({codeLines, activeLineNumber}){
             <pre> 
                 <code>
                     {codeLines.map((codeLine, index)=>(
-                        <span key={index} className="block">
+                        <span key={index} className={
+                            index + 1 === activeLineNumber ?
+                            "block bg-yellow-300 text-slate-950" :
+                            "block"
+                        }>
                             {codeLine || "\u00A0"} 
                         </span>
                     ) )}

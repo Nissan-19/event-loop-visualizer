@@ -15,7 +15,7 @@ function AppLayout (){
   const lastStep = functionCallLesson.steps.length
 
   const currentEvent = currentStep === 0 ? null : functionCallLesson.steps[currentStep - 1] // to match the index number and what is displayed on the screen
-                                                  //retrieves the event stored at that index
+                                                  //retrieves the event stored at that index//at 0 currentEvent is null because execution has not started. It is not because array index 0 is null.
   
   const currentExplanation = currentEvent === null ? "Press Next to begin the JavaScript execution." : currentEvent.explanation
 
