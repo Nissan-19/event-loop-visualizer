@@ -8,7 +8,7 @@ function ConsolePanel({currentConsoleOutput}) {
         </h2>
       </div>
 
-      <div className="min-h-40 bg-[#080c12] p-3 font-mono text-sm text-green-400">
+      <div className="min-h-40 text-xl bg-[#080c12] p-3 font-mono text-green-400">
       { currentConsoleOutput.length === 0 ? (
         <pre >
             <code>Waiting for execution...</code>
@@ -22,7 +22,7 @@ function ConsolePanel({currentConsoleOutput}) {
               style={{
                 "--character-count": output.length,
                 "--console-line-width": `${output.length}ch`,
-                "--typing-duration": `${Math.max(output.length * 80, 300)}ms`,
+                "--typing-duration": `${Math.max(output.length * 60, 300)}ms`,
               }}
             >
               {output}

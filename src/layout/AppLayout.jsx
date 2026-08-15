@@ -24,6 +24,14 @@ function AppLayout (){
 
   const executedEvents = functionCallLesson.steps.slice(0,currentStep)//to save all the event that have been executed
 
+  const filteredSteps = functionCallLesson.steps.filter((event)=>( //this is for getting the correct output for the guess part(start)
+     event.type === "PRINT_CONSOLE"
+  ))
+  const expectedOutput = filteredSteps.map((filtredStep)=>(
+     filtredStep.value
+  ))// (end)
+
+  
   const currentCallStack = []
   executedEvents.forEach((event)=>{
     if(event.type === "PUSH_STACK"){
@@ -86,7 +94,8 @@ function AppLayout (){
           </div>
 
           <div >
-            <GuessOutput/>
+            <GuessOutput
+              expectedOutput = {expectedOutput}/>
             <ConsolePanel
               currentConsoleOutput = {currentConsoleOutput}/>
           </div>

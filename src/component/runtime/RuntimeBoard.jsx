@@ -5,11 +5,8 @@ import MicrotaskQueue from "./MicrotaskQueue"
 
 function RuntimeBoard({currentCallStack, }) {
   return (
-    <section className="relative min-h-140 w-full overflow-hidden rounded-xl border border-slate-700 bg-[#0b1628] p-3 shadow-lg shadow-black/20">
-      <h2 className="mb-3 font-semibold text-white">
-        JavaScript Runtime
-      </h2>
-
+    <section className="relative min-h-130 w-full overflow-hidden rounded-xl border border-slate-700 bg-[#0b1628] p-3 shadow-lg shadow-black/20">
+      
       <div className="grid min-h-120 grid-cols-6 grid-rows-6 gap-4 sm:gap-6">
         <div className="col-start-3 col-end-5 row-start-1 row-end-3 h-full">
           <MicrotaskQueue />
