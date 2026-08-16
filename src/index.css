@@ -86,3 +86,18 @@ textarea {
   animation-timing-function: steps(var(--character-count), end);
   animation-fill-mode: forwards;
 }
+
+@property --progress-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.event-loop-progress {
+  background: conic-gradient(
+    #f7df1e 0deg var(--progress-angle),
+    #334155 var(--progress-angle) 360deg
+  );
+
+  transition: --progress-angle 700ms ease-in-out;
+}

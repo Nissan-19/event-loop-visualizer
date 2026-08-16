@@ -7,7 +7,7 @@ function CallStack({ currentCallStack }) {
 
       <div className="mt-auto text-sm text-slate-400">
         {currentCallStack.length === 0 ? (
-          <p className="text-center">
+          <p className="text-center text-xl">
             Call Stack is empty
           </p>
         ) : (

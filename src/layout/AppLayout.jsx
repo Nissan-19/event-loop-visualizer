@@ -86,6 +86,8 @@ function AppLayout (){
 
           <div >
             <RuntimeBoard
+              currentStep = {currentStep}
+              lastStep = {lastStep}
               currentCallStack = {currentCallStack}
              />
             <StepExplanation
