@@ -1,5 +1,4 @@
 function ConsolePanel({currentConsoleOutput}) {
-  console.log(currentConsoleOutput)
   return (
     <section className="mt-3 overflow-hidden rounded-xl border border-slate-700 bg-[#080c12] shadow-lg shadow-black/20">
       <div className="border-b border-slate-700 bg-slate-800/80 px-3 py-2">
@@ -11,7 +10,7 @@ function ConsolePanel({currentConsoleOutput}) {
       <div className="min-h-40 text-xl bg-[#080c12] p-3 font-mono text-green-400">
       { currentConsoleOutput.length === 0 ? (
         <pre >
-            <code>Waiting for execution...</code>
+            <code>Waiting...</code>
         </pre>
       ):(
         <pre>

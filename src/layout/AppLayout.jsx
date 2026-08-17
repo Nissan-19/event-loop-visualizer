@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import CodePanel from "../component/CodePanel"
 import ConsolePanel from "../component/console/ConsolePanel"
 import GuessOutput from "../component/guess/GuessOutput"
@@ -13,6 +13,7 @@ function AppLayout (){
   
   const [currentStep, setCurrentStep] = useState(0)
   const lastStep = functionCallLesson.steps.length
+  const [isPlaying, setIsPlaying] = useState(false)
 
   const currentEvent = currentStep === 0 ? null : functionCallLesson.steps[currentStep - 1] // to match the index number and what is displayed on the screen
                                                   //retrieves the event stored at that index//at 0 currentEvent is null because execution has not started. It is not because array index 0 is null.
@@ -60,6 +61,26 @@ function AppLayout (){
     setCurrentStep(0)
   }
 
+  useEffect(()=>{
+
+      if(!isPlaying ){
+        return
+      }
+
+      if(currentStep >= lastStep){
+        setIsPlaying(false)
+        return
+      }
+
+      const intervalId = setInterval(() => {
+        setCurrentStep((previous)=>previous + 1)
+      }, 1000);
+
+      return ()=>{
+        clearInterval(intervalId)
+      }
+    },[isPlaying, currentStep] )
+
   return (
     <div className="min-h-screen bg-[#07111f] text-slate-100">
       
@@ -81,6 +102,8 @@ function AppLayout (){
               handleStepDecrement = {handleStepDecrement}
               handleReset = {handleReset}
               lastStep = {lastStep}
+              setIsPlaying = {setIsPlaying}
+              isPlaying={isPlaying}
             />
           </div>
 

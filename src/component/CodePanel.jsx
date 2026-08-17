@@ -38,7 +38,6 @@ function CodePanel({ codeLines, activeLineNumber }) {
             margin: 0,
             minHeight:"100%",
             background:"#0d1117",
-            padding:"0.75rem",
             lineHeight: "1.75rem",
             
           }}
