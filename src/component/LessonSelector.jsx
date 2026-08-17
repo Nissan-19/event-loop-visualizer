@@ -1,17 +1,12 @@
 import { useState } from "react"
+import lessonCatalog from "../data/lessons/lessonCatalog"
 
-const exercisesByTopic = {
-  Topic1: ["Global Execution", "Function Call", "Nested Functions"],
-  Topic2: ["Timer After Synchronous Code", "Zero-Delay Timer"],
-  Topic3: ["Different Timer Delays", "Timers Waiting for the Stack"],
-  Topic4: ["Promise Before Timer", "Microtasks Before Tasks"],
-  Topic5: ["Before and After Await", "Async Function Continuation"],
-}
 
-function LessonSelector() {
-  const [selectedTopic, setSelectedTopic] = useState("")
+function LessonSelector(selectedLessonId ,handleLessonChange) {
 
-  const avaliableExercises = exercisesByTopic[selectedTopic] || []
+  const [selectedTopic, setSelectedTopic] = useState("Topic1")
+
+  const availableExercises = lessonCatalog.filter((lesson)=> lesson.topicId === selectedTopic)
 
   return (
     <section className="flex w-full flex-col gap-3 sm:flex-row sm:items-end sm:justify-end">
@@ -54,13 +49,19 @@ function LessonSelector() {
           className="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100 outline-none transition focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 disabled:cursor-not-allowed disabled:opacity-50 sm:w-60"
           name="exercise"
           id="exercise"
-          disabled={!selectedTopic}
+          value={selectedLessonId}
+          onChange={(event) => {
+            handleLessonChange(event.target.value)
+          }}
+          disabled={availableExercises.length === 0}
         >
-          <option value="">Select an example</option>
+          <option value="" disabled>
+            Select an example
+          </option>
 
-          {avaliableExercises.map((exercise) => (
-            <option key={exercise} value={exercise}>
-              {exercise}
+          {availableExercises.map((lesson) => (
+            <option key={lesson.id} value={lesson.id}>
+              {lesson.title}
             </option>
           ))}
         </select>

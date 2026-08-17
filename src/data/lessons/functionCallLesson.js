@@ -1,7 +1,8 @@
 const functionCallLesson = {
   id: "function-call", //stable internal identifier used by the application.
   title: "Function Call", //human-readable lesson name.
-
+  topicId: "Topic1",
+  
   codeLines: [      //stores the code as separate lines. This will let CodePanel render and highlight an individual line later.
     'console.log("Start");',
     '',
