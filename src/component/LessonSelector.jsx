@@ -41,10 +41,13 @@ function LessonSelector({ selectedLessonId, handleLessonChange }) { //handleless
           onChange={handleTopicChange}
         >
           <option value="Topic1">Synchronous Execution</option>
-          <option value="Topic2">Single Timer</option>
-          <option value="Topic3">Multiple Timers</option>
-          <option value="Topic4">Promise vs Timer</option>
+          <option value="Topic2">Timers and Browser APIs</option>
+          <option value="Topic3">Task Queue Behaviour</option>
+          <option value="Topic4">Promises and Microtasks</option>
           <option value="Topic5">Async/Await</option>
+          <option value="Topic6">Mixed Event-Loop Challenges</option>
+          <option value="Topic7">Browser Events</option>
+          <option value="Topic8">Fetch and Network Requests</option>
         </select>
       </div>
 

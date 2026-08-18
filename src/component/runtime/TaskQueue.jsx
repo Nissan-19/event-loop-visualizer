@@ -20,7 +20,7 @@ function TaskQueue({currentTaskQueue}) {
       {/* Push the stack frames towards the bottom of the box. */}
       <div className="mt-auto text-sm text-slate-400">
         {/* Reverse the visual order so the latest frame appears on top. */}
-        <div className="flex flex-col-reverse gap-2">
+        <div className="flex flex-col gap-2">
           <AnimatePresence
             // Runs after all removed frames finish their exit animations.
             onExitComplete={() => {
@@ -29,18 +29,18 @@ function TaskQueue({currentTaskQueue}) {
               }
             }}
           >
-            {currentTaskQueue.map((stackFrame, index) => (
+            {[...currentTaskQueue].reverse().map((taskQueueItem) => (
               <motion.span
-                key={index}
+                key={taskQueueItem}
                 // Start above the frame's final position.
                 // Each higher frame travels a slightly shorter distance.
-                initial={{ y: -50 + index * 46 }}
+                initial={{ y: -50  }}
 
                 // Move down into the frame's normal position.
                 animate={{ y: 0 }}
 
                 // Move back upward before React removes the frame.
-                exit={{ y: -50 + index * 46 }}
+                exit={{ y: 50 }}
 
                 // Control the duration and smoothness of both movements.
                 transition={{
@@ -49,7 +49,7 @@ function TaskQueue({currentTaskQueue}) {
                 }}
                 className="rounded-md border border-sky-400/40 bg-sky-400/10 px-3 py-2 text-center font-semibold text-sky-200"
               >
-                {stackFrame}
+                {taskQueueItem}
               </motion.span>
             ))}
           </AnimatePresence>

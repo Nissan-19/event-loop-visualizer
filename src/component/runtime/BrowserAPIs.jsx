@@ -31,18 +31,18 @@ function BrowserAPIs({currentBrowserApi}) {
               }
             }}
           >
-            {currentBrowserApi.map((browserApisItem, index) => (
+            {[...currentBrowserApi].reverse().map((browserApisItem) => (//making a copy of the array and reversing it so that visually it moves downward
               <motion.span
-                key={index}
+                key={browserApisItem}
                 // Start above the frame's final position.
                 // Each higher frame travels a slightly shorter distance.
-                initial={{ y: -220 + index * 46 }}
+                initial={{ y: -220 }}
 
                 // Move down into the frame's normal position.
                 animate={{ y: 0 }}
 
                 // Move back upward before React removes the frame.
-                exit={{ y: -220 + index * 46 }}
+                exit={{ y: 220 }}
 
                 // Control the duration and smoothness of both movements.
                 transition={{
