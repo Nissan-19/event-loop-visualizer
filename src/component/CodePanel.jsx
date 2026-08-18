@@ -43,7 +43,7 @@ function CodePanel({ codeLines, activeLineNumber }) {
           }}
           codeTagProps={{
             style: {
-              fontSize: "1.125rem",              
+              fontSize: "1rem",              
             },
           }}>
             {codeString}

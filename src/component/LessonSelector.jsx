@@ -1,12 +1,27 @@
-import { useState } from "react"
 import lessonCatalog from "../data/lessons/lessonCatalog"
 
+function LessonSelector({ selectedLessonId, handleLessonChange }) { //handlelessonchange updates the selectedlessonid
+  // Find the complete lesson object that is currently selected.
+  const selectedLesson = lessonCatalog.find((lesson) => lesson.id === selectedLessonId)
 
-function LessonSelector(selectedLessonId ,handleLessonChange) {
+  // We do not store the topic separately.
+  // The selected lesson already tells us which topic it belongs to.
+  const selectedTopic = selectedLesson.topicId
 
-  const [selectedTopic, setSelectedTopic] = useState("Topic1")
+  // Show only the exercises belonging to the current topic.
+  const availableExercises = lessonCatalog.filter((lesson) => lesson.topicId === selectedTopic)
 
-  const availableExercises = lessonCatalog.filter((lesson)=> lesson.topicId === selectedTopic)
+  function handleTopicChange(event) {
+    const newTopic = event.target.value
+
+    // When the topic changes, select the first available lesson
+    // belonging to that topic.
+    const firstLesson = lessonCatalog.find((lesson) => lesson.topicId === newTopic) //out of the lesson catalaagoue find the first lesson whose topic id matches witht the new topic id
+
+    if (firstLesson) {
+      handleLessonChange(firstLesson.id) //and from that lesson send the id to handlelesson change which needs id to change
+    }
+  }
 
   return (
     <section className="flex w-full flex-col gap-3 sm:flex-row sm:items-end sm:justify-end">
@@ -23,12 +38,8 @@ function LessonSelector(selectedLessonId ,handleLessonChange) {
           name="topic"
           id="topic"
           value={selectedTopic}
-          onChange={(event) => setSelectedTopic(event.target.value)}
+          onChange={handleTopicChange}
         >
-          <option value="" disabled>
-            Select a topic
-          </option>
-
           <option value="Topic1">Synchronous Execution</option>
           <option value="Topic2">Single Timer</option>
           <option value="Topic3">Multiple Timers</option>
@@ -55,10 +66,6 @@ function LessonSelector(selectedLessonId ,handleLessonChange) {
           }}
           disabled={availableExercises.length === 0}
         >
-          <option value="" disabled>
-            Select an example
-          </option>
-
           {availableExercises.map((lesson) => (
             <option key={lesson.id} value={lesson.id}>
               {lesson.title}

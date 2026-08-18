@@ -15,8 +15,10 @@ function AppLayout (){
  
   const [isPlaying, setIsPlaying] = useState(false)
 
-  const [selectedLessonId, setSelectedLessonId] = useState(lessonCatalog[0].id)
+  const [selectedLessonId, setSelectedLessonId] = useState(lessonCatalog[0].id)//When the app loads for the first time, automatically select the first lesson in the catalogue.
+
   const activeLesson = lessonCatalog.find((lesson)=> selectedLessonId === lesson.id)
+
   const lastStep = activeLesson.steps.length
   
  
