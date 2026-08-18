@@ -62,7 +62,7 @@ function CallStack({ currentCallStack }) {
         {/* Show this only after the stack is empty and exits are complete. */}
         {showEmptyMessage && currentCallStack.length === 0 && (
           <div>
-            <p className="text-center text-xl">
+            <p className="text-center">
               Call Stack is empty
             </p>
             <p className="text-center">

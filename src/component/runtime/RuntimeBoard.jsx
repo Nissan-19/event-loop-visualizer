@@ -3,7 +3,7 @@ import BrowserAPIs from "./BrowserAPIs"
 import TaskQueue from "./TaskQueue"
 import MicrotaskQueue from "./MicrotaskQueue"
 
-function RuntimeBoard({currentCallStack, currentStep, lastStep }) {
+function RuntimeBoard({currentCallStack, currentStep, lastStep, currentBrowserApi, currentTaskQueue }) {
   const progress = currentStep / lastStep
   const progressAngle = progress*360
 
@@ -37,11 +37,13 @@ function RuntimeBoard({currentCallStack, currentStep, lastStep }) {
         </div>
 
         <div className="col-start-5 col-end-7 row-start-2 row-end-6 h-full">
-          <BrowserAPIs />
+          <BrowserAPIs 
+           currentBrowserApi={currentBrowserApi}/>
         </div>
 
         <div className="col-start-3 col-end-5 row-start-5 row-end-7 h-full">
-          <TaskQueue />
+          <TaskQueue 
+          currentTaskQueue={currentTaskQueue}/>
         </div>
       </div>
     </section>

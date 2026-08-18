@@ -32,6 +32,7 @@ function AppLayout (){
   const activeLineNumber = currentEvent === null ? null : currentEvent.lineNumber
 
   const executedEvents = activeLesson.steps.slice(0,currentStep)//to save all the event that have been executed
+  const executedActions = executedEvents.flatMap((event) => {return event.actions ? event.actions : [event]})
 
   const filteredSteps = activeLesson.steps.filter((event)=>( //this is for getting the correct output for the guess part(start)
      event.type === "PRINT_CONSOLE"
@@ -42,12 +43,32 @@ function AppLayout (){
 
   
   const currentCallStack = []
-  executedEvents.forEach((event)=>{
+  executedActions.forEach((event)=>{
     if(event.type === "PUSH_STACK"){
       currentCallStack.push(event.label)
     } else if(event.type === "POP_STACK"){
         currentCallStack.pop()
       }
+  })
+
+  const currentBrowserApi = []
+  executedActions.forEach((event)=>{
+    if(event.type === "ADD_BROWSER_API"){
+      currentBrowserApi.push(event.label)
+    }else if(event.type === "REMOVE_BROWSER_API"){
+      const itemIndex = currentBrowserApi.indexOf(event.label) //getting the index of the lable stored in browser api
+        currentBrowserApi.splice(itemIndex, 1)//startting at item index only remove 1 item
+    }
+  })
+  
+  const currentTaskQueue = []
+  executedActions.forEach((event)=>{
+    if(event.type === "ADD_TASK_QUEUE" ){
+      currentTaskQueue.push(event.label)
+    }else if(event.type === "REMOVE_TASK_QUEUE"){
+      const itemIndex = currentTaskQueue.indexOf(event.label) //getting the index of the lable stored in browser api
+        currentTaskQueue.splice(itemIndex, 1)//startting at item index only remove 1 item
+    }
   })
 
   const currentConsoleOutput = []
@@ -129,6 +150,8 @@ function AppLayout (){
               currentStep = {currentStep}
               lastStep = {lastStep}
               currentCallStack = {currentCallStack}
+              currentBrowserApi={currentBrowserApi}
+              currentTaskQueue={currentTaskQueue}
              />
             <StepExplanation
 

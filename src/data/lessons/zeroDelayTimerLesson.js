@@ -1,6 +1,6 @@
-const timerAfterSynchronousCodeLesson = {
-  id: "timer-after-synchronous-code",
-  title: "Timer After Synchronous Code",
+const zeroDelayTimerLesson = {
+  id: "zero-delay-timer",
+  title: "Zero-Delay Timer",
   topicId: "Topic2",
 
   codeLines: [
@@ -8,7 +8,7 @@ const timerAfterSynchronousCodeLesson = {
     '',
     'setTimeout(() => {',
     '  console.log("Timer");',
-    '}, 1000);',
+    '}, 0);',
     '',
     'console.log("End");',
   ],
@@ -36,9 +36,9 @@ const timerAfterSynchronousCodeLesson = {
       id: "timer-register",
       lineNumber: 3,
       type: "ADD_BROWSER_API",
-      label: "Timer (1000ms)",
+      label: "Timer (0ms)",
       explanation:
-        "setTimeout is called. The browser starts managing the 1000ms timer while JavaScript continues executing.",
+        "setTimeout is called with a 0ms delay. The browser handles the timer, but the callback does not run immediately.",
     },
 
     {
@@ -47,7 +47,7 @@ const timerAfterSynchronousCodeLesson = {
       type: "PRINT_CONSOLE",
       value: "End",
       explanation:
-        'JavaScript does not wait for the timer. console.log("End") executes synchronously and prints End.',
+        'JavaScript continues executing synchronously, so console.log("End") prints End before the timer callback runs.',
     },
 
     {
@@ -59,8 +59,6 @@ const timerAfterSynchronousCodeLesson = {
         "The synchronous script has finished, so Global is removed from the Call Stack.",
     },
 
-    // One meaningful transition:
-    // Browser APIs → Task Queue
     {
       id: "timer-to-task-queue",
       lineNumber: null,
@@ -68,7 +66,7 @@ const timerAfterSynchronousCodeLesson = {
       actions: [
         {
           type: "REMOVE_BROWSER_API",
-          label: "Timer (1000ms)",
+          label: "Timer (0ms)",
         },
         {
           type: "ADD_TASK_QUEUE",
@@ -77,11 +75,9 @@ const timerAfterSynchronousCodeLesson = {
       ],
 
       explanation:
-        "The timer has completed. The browser finishes managing the timer and places its ready callback into the Task Queue.",
+        "The timer is ready, so the browser removes it from Browser APIs and places its callback into the Task Queue.",
     },
 
-    // One meaningful transition:
-    // Task Queue → Call Stack
     {
       id: "task-queue-to-stack",
       lineNumber: 3,
@@ -98,7 +94,7 @@ const timerAfterSynchronousCodeLesson = {
       ],
 
       explanation:
-        "The Call Stack is empty, so the Event Loop allows the timer callback to move from the Task Queue onto the Call Stack.",
+        "The Call Stack is empty, so the Event Loop moves the timer callback from the Task Queue onto the Call Stack.",
     },
 
     {
@@ -107,7 +103,7 @@ const timerAfterSynchronousCodeLesson = {
       type: "PRINT_CONSOLE",
       value: "Timer",
       explanation:
-        'The timer callback is now executing, so console.log("Timer") prints Timer.',
+        'The timer callback executes and console.log("Timer") prints Timer.',
     },
 
     {
@@ -121,4 +117,4 @@ const timerAfterSynchronousCodeLesson = {
   ],
 }
 
-export default timerAfterSynchronousCodeLesson
+export default zeroDelayTimerLesson
