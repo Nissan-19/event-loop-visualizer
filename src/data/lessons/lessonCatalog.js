@@ -8,6 +8,8 @@ import multipleTimersSameDelayLesson from "./multipleTimersSameDelayLesson"
 import resolvedPromiseLesson from "./resolvedPromiseLesson"
 import promiseBeforeTimerLesson from "./promiseBeforeTimerLesson"
 import multipleMicrotasksFifoLesson from "./multipleMicrotasksFifoLesson"
+import differentTimerDelaysLesson from "./differentTimerDelaysLesson"
+import timerWaitingForBusyCallStackLesson from "./timerWaitingForBusyCallStackLesson"
 
 const lessonCatalog = [functionCallLesson, 
                         globalExecutionLesson, 
@@ -18,7 +20,9 @@ const lessonCatalog = [functionCallLesson,
                         multipleTimersSameDelayLesson,
                         resolvedPromiseLesson,
                         promiseBeforeTimerLesson,
-                        multipleMicrotasksFifoLesson
+                        multipleMicrotasksFifoLesson,
+                        differentTimerDelaysLesson,
+                        timerWaitingForBusyCallStackLesson
                     ]
 
 export default lessonCatalog
