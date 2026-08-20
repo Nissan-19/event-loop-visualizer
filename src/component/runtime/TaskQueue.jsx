@@ -10,7 +10,7 @@ function TaskQueue({currentTaskQueue}) {
         setShowEmptyMessage(false)
       }
     }, [currentTaskQueue.length])
-
+ 
   return (
     <section className="h-full rounded-lg border flex flex-col overflow-hidden border-orange-500/60 bg-orange-500/10 p-3 shadow-[inset_0_0_24px_rgba(249,115,22,0.05)]">
       <h3 className=" text-center font-semibold text-orange-300">
@@ -47,7 +47,7 @@ function TaskQueue({currentTaskQueue}) {
                   duration: 0.7,
                   ease: "easeInOut",
                 }}
-                className="rounded-md border border-sky-400/40 bg-sky-400/10 px-3 py-2 text-center font-semibold text-sky-200"
+                className="rounded-md border border-orange-400/40 bg-orange-400/10 px-3 py-2 text-center font-semibold text-orange-200"
               >
                 {taskQueueItem}
               </motion.span>
@@ -59,7 +59,7 @@ function TaskQueue({currentTaskQueue}) {
         {showEmptyMessage && currentTaskQueue.length === 0 && (
           <div>
             <p className="text-center">
-              Browser Api is empty
+              Task Queue is empty
             </p>
             <p className="text-center">
               (First In First Out)

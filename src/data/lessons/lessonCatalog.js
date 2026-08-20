@@ -5,6 +5,9 @@ import timerAfterSynchronousCodeLesson from "./timerAfterSynchronousCodeLesson"
 import zeroDelayTimerLesson from "./zeroDelayTimerLesson"
 import timerWithLongSynchronousWorkLesson from "./timerWithLongSynchronousWorkLesson"
 import multipleTimersSameDelayLesson from "./multipleTimersSameDelayLesson"
+import resolvedPromiseLesson from "./resolvedPromiseLesson"
+import promiseBeforeTimerLesson from "./promiseBeforeTimerLesson"
+import multipleMicrotasksFifoLesson from "./multipleMicrotasksFifoLesson"
 
 const lessonCatalog = [functionCallLesson, 
                         globalExecutionLesson, 
@@ -12,6 +15,10 @@ const lessonCatalog = [functionCallLesson,
                         timerAfterSynchronousCodeLesson,
                         zeroDelayTimerLesson,
                         timerWithLongSynchronousWorkLesson,
-                        multipleTimersSameDelayLesson]
+                        multipleTimersSameDelayLesson,
+                        resolvedPromiseLesson,
+                        promiseBeforeTimerLesson,
+                        multipleMicrotasksFifoLesson
+                    ]
 
 export default lessonCatalog

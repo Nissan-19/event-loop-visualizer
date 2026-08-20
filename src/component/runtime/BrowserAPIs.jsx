@@ -31,7 +31,7 @@ function BrowserAPIs({currentBrowserApi}) {
               }
             }}
           >
-            {[...currentBrowserApi].reverse().map((browserApisItem) => (//making a copy of the array and reversing it so that visually it moves downward
+            {[...currentBrowserApi].reverse().map((browserApisItem, index) => (//making a copy of the array and reversing it so that visually it moves downward
               <motion.span
                 key={browserApisItem}
                 // Start above the frame's final position.
@@ -49,7 +49,7 @@ function BrowserAPIs({currentBrowserApi}) {
                   duration: 0.7,
                   ease: "easeInOut",
                 }}
-                className="rounded-md border border-sky-400/40 bg-sky-400/10 px-3 py-2 text-center font-semibold text-sky-200"
+                className="rounded-md border border-purple-400/40 bg-purple-400/10 px-3 py-2 text-center font-semibold text-purple-200"
               >
                 {browserApisItem}
               </motion.span>

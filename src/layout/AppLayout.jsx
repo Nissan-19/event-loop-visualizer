@@ -29,11 +29,13 @@ function AppLayout (){
   const currentExplanation = currentEvent === null ? "Press Next to begin the JavaScript execution." : currentEvent.explanation
 
   const codeLines = activeLesson.codeLines
+
   const activeLineNumber = currentEvent === null ? null : currentEvent.lineNumber
 
   const executedEvents = activeLesson.steps.slice(0,currentStep)//to save all the event that have been executed
-  const executedActions = executedEvents.flatMap((event) => {return event.actions ? event.actions : [event]})
 
+  const executedActions = executedEvents.flatMap((event) => {return event.actions ? event.actions : [event]})
+  //We used flatMap() because our lesson steps can contain either one action or multiple actions.
   const filteredSteps = activeLesson.steps.filter((event)=>( //this is for getting the correct output for the guess part(start)
      event.type === "PRINT_CONSOLE"
   ))
@@ -68,6 +70,16 @@ function AppLayout (){
     }else if(event.type === "REMOVE_TASK_QUEUE"){
       const itemIndex = currentTaskQueue.indexOf(event.label) //getting the index of the lable stored in browser api
         currentTaskQueue.splice(itemIndex, 1)//startting at item index only remove 1 item
+    }
+  })
+
+  const currentMircrotask = []
+  executedActions.forEach((event)=>{
+    if(event.type === "ADD_MICROTASK_QUEUE"){
+      currentMircrotask.push(event.label)
+    }else if(event.type === "REMOVE_MICROTASK_QUEUE"){
+      const itemIndex = currentMircrotask.indexOf(event.label)
+        currentMircrotask.splice(itemIndex, 1)
     }
   })
 
@@ -152,6 +164,7 @@ function AppLayout (){
               currentCallStack = {currentCallStack}
               currentBrowserApi={currentBrowserApi}
               currentTaskQueue={currentTaskQueue}
+              currentMicrotask = {currentMircrotask}
              />
             <StepExplanation
 
