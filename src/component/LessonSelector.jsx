@@ -44,11 +44,12 @@ function LessonSelector({ selectedLessonId, handleLessonChange }) { //handleless
           <option value="Topic2">Timers and Browser APIs</option>
           <option value="Topic3">Task Queue Behaviour</option>
           <option value="Topic4">Promises and Microtasks</option>
-          <option value="Topic5">Async/Await</option>
-          <option value="Topic6">Mixed Event-Loop Challenges</option>
-          <option value="Topic7">Browser Events</option>
-          <option value="Topic8">Fetch and Network Requests</option>
-          <option value="Topic9">Mixed Promise States</option>
+          <option value="Topic5">Mixed Promise States</option>
+          <option value="Topic6">Async/Await</option>
+          <option value="Topic7">Mixed Event-Loop Challenges</option>
+          <option value="Topic8">Browser Events</option>
+          <option value="Topic9">Fetch and Network Requests</option>
+          
         </select>
       </div>
 

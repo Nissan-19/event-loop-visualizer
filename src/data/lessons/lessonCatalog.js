@@ -14,6 +14,9 @@ import rejectedPromiseLesson from "./rejectedPromiseLesson"
 import rejectedPromiseAfterAsyncWorkLesson from "./rejectedPromiseAfterAsyncWorkLesson"
 import pendingPromiseFulfilledLesson from "./pendingPromiseFulfilledLesson"
 import pendingPromiseMultipleThenLesson from "./pendingPromiseMultipleThenLesson"
+import fulfilledRejectedTogetherLesson from "./fulfilledRejectedTogetherLesson"
+import pendingVsFulfilledLesson from "./pendingVsFulfilledLesson"
+import allPromiseStatesTogetherLesson from "./allPromiseStatesTogetherLesson"
 
 const lessonCatalog = [functionCallLesson, 
                         globalExecutionLesson, 
@@ -30,7 +33,10 @@ const lessonCatalog = [functionCallLesson,
                         rejectedPromiseLesson,
                         rejectedPromiseAfterAsyncWorkLesson,
                         pendingPromiseFulfilledLesson,
-                        pendingPromiseMultipleThenLesson
+                        pendingPromiseMultipleThenLesson,
+                        fulfilledRejectedTogetherLesson,
+                        pendingVsFulfilledLesson,
+                        allPromiseStatesTogetherLesson
                     ]
 
 export default lessonCatalog
