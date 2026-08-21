@@ -17,15 +17,7 @@ function Reset(){
   return (
     <section className="mt-3 rounded-xl border border-slate-700 bg-slate-900 p-3 shadow-lg shadow-black/20">
       <div className="flex flex-wrap gap-2">
-        <button
-          type="button"
-          className="h-9 rounded-md border border-slate-700 bg-slate-800 px-3 text-sm font-medium text-slate-200 transition hover:border-slate-500 hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 disabled:cursor-not-allowed disabled:opacity-40"
-          disabled={currentStep <= 0}
-          onClick={Previous}
-        >
-          Previous
-        </button>
-
+        
         <button
           type="button"
           disabled = {currentStep>=lastStep}
@@ -33,6 +25,15 @@ function Reset(){
           className="h-9 rounded-md border border-slate-700 min-w-18 bg-slate-800 px-3 text-sm font-medium text-slate-200 transition hover:border-slate-500 hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400"
         >
           {isPlaying ? "Pause":"Play"}
+        </button>
+
+        <button
+          type="button"
+          className="h-9 rounded-md border border-slate-700 bg-slate-800 px-3 text-sm font-medium text-slate-200 transition hover:border-slate-500 hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 disabled:cursor-not-allowed disabled:opacity-40"
+          disabled={currentStep <= 0}
+          onClick={Previous}
+        >
+          Previous
         </button>
 
         <button

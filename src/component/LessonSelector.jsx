@@ -48,6 +48,7 @@ function LessonSelector({ selectedLessonId, handleLessonChange }) { //handleless
           <option value="Topic6">Mixed Event-Loop Challenges</option>
           <option value="Topic7">Browser Events</option>
           <option value="Topic8">Fetch and Network Requests</option>
+          <option value="Topic9">Mixed Promise States</option>
         </select>
       </div>
 

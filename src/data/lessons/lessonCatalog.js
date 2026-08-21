@@ -10,6 +10,10 @@ import promiseBeforeTimerLesson from "./promiseBeforeTimerLesson"
 import multipleMicrotasksFifoLesson from "./multipleMicrotasksFifoLesson"
 import differentTimerDelaysLesson from "./differentTimerDelaysLesson"
 import timerWaitingForBusyCallStackLesson from "./timerWaitingForBusyCallStackLesson"
+import rejectedPromiseLesson from "./rejectedPromiseLesson"
+import rejectedPromiseAfterAsyncWorkLesson from "./rejectedPromiseAfterAsyncWorkLesson"
+import pendingPromiseFulfilledLesson from "./pendingPromiseFulfilledLesson"
+import pendingPromiseMultipleThenLesson from "./pendingPromiseMultipleThenLesson"
 
 const lessonCatalog = [functionCallLesson, 
                         globalExecutionLesson, 
@@ -22,7 +26,11 @@ const lessonCatalog = [functionCallLesson,
                         promiseBeforeTimerLesson,
                         multipleMicrotasksFifoLesson,
                         differentTimerDelaysLesson,
-                        timerWaitingForBusyCallStackLesson
+                        timerWaitingForBusyCallStackLesson,
+                        rejectedPromiseLesson,
+                        rejectedPromiseAfterAsyncWorkLesson,
+                        pendingPromiseFulfilledLesson,
+                        pendingPromiseMultipleThenLesson
                     ]
 
 export default lessonCatalog
