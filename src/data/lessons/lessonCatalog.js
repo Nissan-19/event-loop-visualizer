@@ -26,6 +26,12 @@ import asyncReturnsRejectedLesson from "./asyncReturnsRejectedLesson"
 import asyncPendingWhileAwaitingLesson from "./asyncPendingWhileAwaitingLesson"
 import pendingToFulfilledReturnLesson from "./pendingToFulfilledReturnLesson"
 import pendingToRejectedReturnLesson from "./pendingToRejectedReturnLesson"
+import mixedPromiseAsyncTimerLesson from "./mixedPromiseAsyncTimerLesson"
+import asyncContinuationBeforeThenLesson from "./asyncContinuationBeforeThenLesson"
+import microtaskInsideTimerLesson from "./microtaskInsideTimerLesson"
+import microtaskCreatesMicrotaskLesson from "./microtaskCreatesMicrotaskLesson"
+import timerInsidePromiseLesson from "./timerInsidePromiseLesson"
+import promiseChainWithTimerLesson from "./promiseChainWithTimerLesson"
 
 const lessonCatalog = [functionCallLesson, 
                         globalExecutionLesson, 
@@ -54,7 +60,13 @@ const lessonCatalog = [functionCallLesson,
                         asyncReturnsRejectedLesson,
                         asyncPendingWhileAwaitingLesson,
                         pendingToFulfilledReturnLesson,
-                        pendingToRejectedReturnLesson
+                        pendingToRejectedReturnLesson,
+                        mixedPromiseAsyncTimerLesson,
+                        asyncContinuationBeforeThenLesson,
+                        microtaskInsideTimerLesson,
+                        microtaskCreatesMicrotaskLesson,
+                        timerInsidePromiseLesson,
+                        promiseChainWithTimerLesson
                     ]
 
 export default lessonCatalog
