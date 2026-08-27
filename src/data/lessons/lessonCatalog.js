@@ -17,6 +17,15 @@ import pendingPromiseMultipleThenLesson from "./pendingPromiseMultipleThenLesson
 import fulfilledRejectedTogetherLesson from "./fulfilledRejectedTogetherLesson"
 import pendingVsFulfilledLesson from "./pendingVsFulfilledLesson"
 import allPromiseStatesTogetherLesson from "./allPromiseStatesTogetherLesson"
+import beforeAfterAwaitLesson from "./beforeAfterAwaitLesson"
+import awaitWithFulfilledValueLesson from "./awaitWithFulfilledValueLesson"
+import multipleAwaitsLesson from "./multipleAwaitsLesson"
+import awaitVersusTimerLesson from "./awaitVersusTimerLesson"
+import asyncReturnsFulfilledLesson from "./asyncReturnsFulfilledLesson"
+import asyncReturnsRejectedLesson from "./asyncReturnsRejectedLesson"
+import asyncPendingWhileAwaitingLesson from "./asyncPendingWhileAwaitingLesson"
+import pendingToFulfilledReturnLesson from "./pendingToFulfilledReturnLesson"
+import pendingToRejectedReturnLesson from "./pendingToRejectedReturnLesson"
 
 const lessonCatalog = [functionCallLesson, 
                         globalExecutionLesson, 
@@ -36,7 +45,16 @@ const lessonCatalog = [functionCallLesson,
                         pendingPromiseMultipleThenLesson,
                         fulfilledRejectedTogetherLesson,
                         pendingVsFulfilledLesson,
-                        allPromiseStatesTogetherLesson
+                        allPromiseStatesTogetherLesson,
+                        beforeAfterAwaitLesson,
+                        awaitWithFulfilledValueLesson,
+                        multipleAwaitsLesson,
+                        awaitVersusTimerLesson,
+                        asyncReturnsFulfilledLesson,
+                        asyncReturnsRejectedLesson,
+                        asyncPendingWhileAwaitingLesson,
+                        pendingToFulfilledReturnLesson,
+                        pendingToRejectedReturnLesson
                     ]
 
 export default lessonCatalog

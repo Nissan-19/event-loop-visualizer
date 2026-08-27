@@ -46,9 +46,10 @@ function LessonSelector({ selectedLessonId, handleLessonChange }) { //handleless
           <option value="Topic4">Promises and Microtasks</option>
           <option value="Topic5">Mixed Promise States</option>
           <option value="Topic6">Async/Await</option>
-          <option value="Topic7">Mixed Event-Loop Challenges</option>
-          <option value="Topic8">Browser Events</option>
-          <option value="Topic9">Fetch and Network Requests</option>
+          <option value="Topic7">Async Function Promise States</option>
+          <option value="Topic8">Mixed Event-Loop Challenges</option>
+          <option value="Topic9">Browser Events</option>
+          <option value="Topic10">Fetch and Network Requests</option>
           
         </select>
       </div>
