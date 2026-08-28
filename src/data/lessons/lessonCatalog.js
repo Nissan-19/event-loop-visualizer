@@ -32,6 +32,7 @@ import microtaskInsideTimerLesson from "./microtaskInsideTimerLesson"
 import microtaskCreatesMicrotaskLesson from "./microtaskCreatesMicrotaskLesson"
 import timerInsidePromiseLesson from "./timerInsidePromiseLesson"
 import promiseChainWithTimerLesson from "./promiseChainWithTimerLesson"
+import advancedMixedEventLoopLesson from "./advancedMixedEventLoopLesson"
 
 const lessonCatalog = [functionCallLesson, 
                         globalExecutionLesson, 
@@ -66,7 +67,8 @@ const lessonCatalog = [functionCallLesson,
                         microtaskInsideTimerLesson,
                         microtaskCreatesMicrotaskLesson,
                         timerInsidePromiseLesson,
-                        promiseChainWithTimerLesson
+                        promiseChainWithTimerLesson,
+                        advancedMixedEventLoopLesson
                     ]
 
 export default lessonCatalog
