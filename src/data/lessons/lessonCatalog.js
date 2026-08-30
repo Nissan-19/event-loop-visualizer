@@ -33,6 +33,12 @@ import microtaskCreatesMicrotaskLesson from "./microtaskCreatesMicrotaskLesson"
 import timerInsidePromiseLesson from "./timerInsidePromiseLesson"
 import promiseChainWithTimerLesson from "./promiseChainWithTimerLesson"
 import advancedMixedEventLoopLesson from "./advancedMixedEventLoopLesson"
+import eventListenerNoClickLesson from "./eventListenerNoClickLesson"
+import clickAfterSynchronousLesson from "./clickAfterSynchronousLesson"
+import clickDuringBusyWorkLesson from "./clickDuringBusyWorkLesson"
+import clickVsPromiseMicrotaskLesson from "./clickVsPromiseMicrotaskLesson"
+import multipleBrowserEventsLesson from "./multipleBrowserEventsLesson"
+import advancedBrowserEventsLesson from "./advancedBrowserEventsLesson"
 
 const lessonCatalog = [functionCallLesson, 
                         globalExecutionLesson, 
@@ -68,7 +74,13 @@ const lessonCatalog = [functionCallLesson,
                         microtaskCreatesMicrotaskLesson,
                         timerInsidePromiseLesson,
                         promiseChainWithTimerLesson,
-                        advancedMixedEventLoopLesson
+                        advancedMixedEventLoopLesson,
+                        eventListenerNoClickLesson,
+                        clickAfterSynchronousLesson,
+                        clickDuringBusyWorkLesson,
+                        clickVsPromiseMicrotaskLesson,
+                        multipleBrowserEventsLesson,
+                        advancedBrowserEventsLesson
                     ]
 
 export default lessonCatalog
