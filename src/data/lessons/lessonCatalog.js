@@ -39,6 +39,13 @@ import clickDuringBusyWorkLesson from "./clickDuringBusyWorkLesson"
 import clickVsPromiseMicrotaskLesson from "./clickVsPromiseMicrotaskLesson"
 import multipleBrowserEventsLesson from "./multipleBrowserEventsLesson"
 import advancedBrowserEventsLesson from "./advancedBrowserEventsLesson"
+import fetchRequestLifecycleLesson from "./fetchRequestLifecycleLesson"
+import fetchResponseObjectLesson from "./fetchResponseObjectLesson"
+import responseJsonSecondPromiseLesson from "./responseJsonSecondPromiseLesson"
+import fetchPromiseChainLesson from "./fetchPromiseChainLesson"
+import fetchAsyncAwaitLesson from "./fetchAsyncAwaitLesson"
+import fetchFailureFinalChallengeLesson from "./fetchFailureFinalChallengeLesson"
+
 
 const lessonCatalog = [functionCallLesson, 
                         globalExecutionLesson, 
@@ -80,7 +87,13 @@ const lessonCatalog = [functionCallLesson,
                         clickDuringBusyWorkLesson,
                         clickVsPromiseMicrotaskLesson,
                         multipleBrowserEventsLesson,
-                        advancedBrowserEventsLesson
+                        advancedBrowserEventsLesson,
+                        fetchRequestLifecycleLesson,
+                        fetchResponseObjectLesson,
+                        responseJsonSecondPromiseLesson,
+                        fetchPromiseChainLesson,
+                        fetchAsyncAwaitLesson,
+                        fetchFailureFinalChallengeLesson
                     ]
 
 export default lessonCatalog
