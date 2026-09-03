@@ -1,12 +1,40 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism"
+import { useRef, useEffect } from "react"
 
 function CodePanel({ codeLines, activeLineNumber }) {
+
+  const activeLineRef = useRef(null)
+  const codeScrollRef = useRef(null)
+
+  useEffect(() => {
+      const container = codeScrollRef.current
+      const activeLine = activeLineRef.current
+
+      if (!container || !activeLine) {
+        return
+      }
+
+      const containerRect = container.getBoundingClientRect()
+      const lineRect = activeLine.getBoundingClientRect()
+
+      if (lineRect.top < containerRect.top) {
+        container.scrollBy({
+          top: lineRect.top - containerRect.top,
+          behavior: "smooth",
+        })
+      } else if (lineRect.bottom > containerRect.bottom) {
+        container.scrollBy({
+          top: lineRect.bottom - containerRect.bottom,
+          behavior: "smooth",
+        })
+      }
+    }, [activeLineNumber])
 
   const codeString = codeLines.join("\n")
 
   return (
-    <section className="mt-2 flex min-h-125 w-full flex-col overflow-hidden rounded-xl border border-slate-700 bg-slate-900 shadow-lg shadow-black/20">
+    <section className="mt-2 flex min-h-125 w-full flex-col overflow-hidden rounded-xl border border-slate-700 bg-slate-900 shadow-lg shadow-black/20 lg:min-h-0 lg:flex-1">
       <div className="flex border-b border-slate-700 bg-slate-800/80 px-3 py-2">
         <h2 className="font-semibold text-slate-100">
           app.js
@@ -17,7 +45,9 @@ function CodePanel({ codeLines, activeLineNumber }) {
         </p>
       </div>
 
-      <div className="flex-1 overflow-x-auto bg-[#0d1117]">
+      <div 
+        ref={codeScrollRef}
+        className="min-h-0 flex-1 overflow-auto bg-[#0d1117]">
         <SyntaxHighlighter
     
           language="javascript"
@@ -27,7 +57,8 @@ function CodePanel({ codeLines, activeLineNumber }) {
           lineProps={(lineNumber) => { //lineProps is a function that SyntaxHighlighter automatically runs for every wrapped line. It gives us that line’s number:
             if(lineNumber === activeLineNumber){
               return{
-                className:"active-code-line block pl-3"
+                className:"active-code-line block pl-3",
+                ref: activeLineRef
               }
             } 
             return{

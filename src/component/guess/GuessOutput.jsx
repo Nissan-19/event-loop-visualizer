@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function GuessOutput({expectedOutput}) {
   const [userInput, setUserInput] = useState("")
@@ -6,7 +6,7 @@ function GuessOutput({expectedOutput}) {
   const enteredText = userInput.trim().toLowerCase()
   const [answerStatus, setAnswerStatus] = useState("idle")
 
-  function check(){
+  function check(){ 
      if(expectedOutputString === enteredText){
       setAnswerStatus("correct")
       return

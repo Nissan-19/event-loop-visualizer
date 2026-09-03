@@ -59,8 +59,11 @@ function AppLayout (){
       currentBrowserApi.push(event.label)
     }else if(event.type === "REMOVE_BROWSER_API"){
       const itemIndex = currentBrowserApi.indexOf(event.label) //getting the index of the lable stored in browser api
+        if(itemIndex === -1){
+          return
+        }
         currentBrowserApi.splice(itemIndex, 1)//startting at item index only remove 1 item
-    }
+          }
   })
   
   const currentTaskQueue = []
@@ -69,7 +72,10 @@ function AppLayout (){
       currentTaskQueue.push(event.label)
     }else if(event.type === "REMOVE_TASK_QUEUE"){
       const itemIndex = currentTaskQueue.indexOf(event.label) //getting the index of the lable stored in browser api
-        currentTaskQueue.splice(itemIndex, 1)//startting at item index only remove 1 item
+       if(itemIndex === -1){
+          return
+        }  
+      currentTaskQueue.splice(itemIndex, 1)//startting at item index only remove 1 item
     }
   })
 
@@ -79,6 +85,9 @@ function AppLayout (){
       currentMircrotask.push(event.label)
     }else if(event.type === "REMOVE_MICROTASK_QUEUE"){
       const itemIndex = currentMircrotask.indexOf(event.label)
+       if(itemIndex === -1){
+          return
+        }
         currentMircrotask.splice(itemIndex, 1)
     }
   })
@@ -91,11 +100,21 @@ function AppLayout (){
   })
 
   function handleStepIncrement(){
-    setCurrentStep((previous)=>previous + 1)
+         setCurrentStep((previous)=>{
+          if (previous >= lastStep){
+            return previous
+          }
+          return previous + 1
+          })
   }
 
   function handleStepDecrement(){
-    setCurrentStep((previous)=>previous - 1)
+    setCurrentStep((previous)=>{
+      if(previous <= 0){
+        return previous
+      }
+       return previous - 1
+    })
   }
 
   function handleReset (){
@@ -120,7 +139,7 @@ function AppLayout (){
       return ()=>{
         clearInterval(intervalId)
       }
-    },[isPlaying, currentStep] )
+    },[isPlaying, currentStep, lastStep] )
 
   function handleLessonChange(lessonId){
     setSelectedLessonId(lessonId)
@@ -129,7 +148,7 @@ function AppLayout (){
   }
 
   return (
-    <div className="min-h-screen bg-[#07111f] text-slate-100">
+    <div className="min-h-screen bg-[#07111f] text-slate-100 lg:flex lg:h-screen lg:flex-col">
       
       <Header
         selectedLessonId = {selectedLessonId}
@@ -137,8 +156,8 @@ function AppLayout (){
         />
       
       
-        <main className="mx-auto grid max-w-[1800px] grid-cols-1 items-start gap-3 p-3 lg:grid-cols-[23fr_57fr_20fr]">
-          <div > 
+        <main className="mx-auto grid max-w-[1800px] grid-cols-1 items-start gap-3 p-3 lg:min-h-0 lg:flex-1 lg:grid-cols-[23fr_57fr_20fr]">
+          <div className="lg:flex lg:h-full lg:min-h-0 min-w-0 lg:flex-col"> 
             
             <CodePanel
               codeLines = {codeLines}
@@ -173,6 +192,7 @@ function AppLayout (){
 
           <div >
             <GuessOutput
+              key = {selectedLessonId}
               expectedOutput = {expectedOutput}/>
             <ConsolePanel
               currentConsoleOutput = {currentConsoleOutput}/>

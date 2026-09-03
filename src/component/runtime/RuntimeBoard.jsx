@@ -9,20 +9,20 @@ function RuntimeBoard({currentCallStack, currentStep, lastStep, currentBrowserAp
 
   return (
 
-    <section className="relative min-h-130 w-full overflow-hidden rounded-xl border border-slate-700 bg-[#0b1628] p-3 shadow-lg shadow-black/20">
+    <section className="relative w-full overflow-hidden rounded-xl border border-slate-700 bg-[#0b1628] p-3 shadow-lg shadow-black/20 lg:min-h-130">
       
-      <div className="grid min-h-120 grid-cols-6 grid-rows-6 gap-4 sm:gap-6">
-        <div className="col-start-3 col-end-5 row-start-1 row-end-3 h-full">
+      <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:min-h-120 lg:grid-cols-6 lg:grid-rows-6">
+        <div className="order-4 h-full lg:order-0 lg:col-start-3 lg:col-end-5 lg:row-start-1 lg:row-end-3">
           <MicrotaskQueue 
             currentMicrotask = {currentMicrotask}/>
         </div>
 
-        <div className="col-start-1 col-end-3 row-start-2 row-end-6 h-full">
+        <div className="order-2 h-full lg:order-0 lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-6">
           <CallStack 
             currentCallStack ={currentCallStack}/>
         </div>
 
-        <div className="col-start-3 col-end-5 row-start-3 row-end-5 flex h-full items-center justify-center">
+        <div className="order-1 flex h-full items-center justify-center md:col-span-2 lg:order-none lg:col-start-3 lg:col-end-5 lg:row-start-3 lg:row-end-5">
           {/* Outer progress ring */}
           <div
             className="event-loop-progress flex size-32 items-center justify-center rounded-full p-1 shadow-[0_0_28px_rgba(247,223,30,0.12)]"
@@ -37,12 +37,12 @@ function RuntimeBoard({currentCallStack, currentStep, lastStep, currentBrowserAp
           </div>
         </div>
 
-        <div className="col-start-5 col-end-7 row-start-2 row-end-6 h-full">
+        <div className="order-3 h-full lg:order-0 lg:col-start-5 lg:col-end-7 lg:row-start-2 lg:row-end-6">
           <BrowserAPIs 
            currentBrowserApi={currentBrowserApi}/>
         </div>
 
-        <div className="col-start-3 col-end-5 row-start-5 row-end-7 h-full">
+        <div className="order-5 h-full lg:order-0 lg:col-start-3 lg:col-end-5 lg:row-start-5 lg:row-end-7">
           <TaskQueue 
           currentTaskQueue={currentTaskQueue}/>
         </div>
