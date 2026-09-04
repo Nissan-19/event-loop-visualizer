@@ -9,7 +9,7 @@ function RuntimeBoard({currentCallStack, currentStep, lastStep, currentBrowserAp
 
   return (
 
-    <section className="relative w-full overflow-hidden rounded-xl border border-slate-700 bg-[#0b1628] p-3 shadow-lg shadow-black/20 lg:min-h-130">
+    <section className="w-full overflow-hidden rounded-xl border border-slate-700 bg-[#0b1628] p-3 shadow-lg shadow-black/20 lg:min-h-130">
       
       <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:min-h-120 lg:grid-cols-6 lg:grid-rows-6">
         <div className="order-4 h-full lg:order-0 lg:col-start-3 lg:col-end-5 lg:row-start-1 lg:row-end-3">
@@ -22,7 +22,7 @@ function RuntimeBoard({currentCallStack, currentStep, lastStep, currentBrowserAp
             currentCallStack ={currentCallStack}/>
         </div>
 
-        <div className="order-1 flex h-full items-center justify-center md:col-span-2 lg:order-none lg:col-start-3 lg:col-end-5 lg:row-start-3 lg:row-end-5">
+        <div className="relative order-1 flex h-full items-center justify-center md:col-span-2 lg:order-0 lg:col-start-3 lg:col-end-5 lg:row-start-3 lg:row-end-5">
           {/* Outer progress ring */}
           <div
             className="event-loop-progress flex size-32 items-center justify-center rounded-full p-1 shadow-[0_0_28px_rgba(247,223,30,0.12)]"

@@ -1,9 +1,9 @@
 const functionCallLesson = {
-  id: "function-call", //stable internal identifier used by the application.
-  title: "Function Call", //human-readable lesson name.
+  id: "function-call", 
+  title: "Function Call", 
   topicId: "Topic1",
   
-  codeLines: [      //stores the code as separate lines. This will let CodePanel render and highlight an individual line later.
+  codeLines: [  
     'console.log("Start");',
     '',
     'function greetUser() {',
@@ -20,7 +20,7 @@ const functionCallLesson = {
         id: "global-enter",
         lineNumber: null,
         type: "PUSH_STACK", 
-        label: "Global", //label because it affect a named stack frame
+        label: "Global", 
         explanation:
         "The Global execution context is created and added to the Call Stack.",
     },
@@ -28,7 +28,7 @@ const functionCallLesson = {
         id: "print-start",
         lineNumber: 1,
         type: "PRINT_CONSOLE",
-        value: "Start", //value to be added to the console
+        value: "Start", 
         explanation:
         'console.log("Start") executes synchronously and prints Start.',
     },
@@ -36,7 +36,7 @@ const functionCallLesson = {
         id: "greet-user-enter",
         lineNumber: 7,
         type: "PUSH_STACK",
-        label: "greetUser", //lable because it affect a named stack frame
+        label: "greetUser", 
         explanation:
         "greetUser() is called, so its execution frame is added to the Call Stack.",
     },

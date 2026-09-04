@@ -47,8 +47,8 @@ import fetchAsyncAwaitLesson from "./fetchAsyncAwaitLesson"
 import fetchFailureFinalChallengeLesson from "./fetchFailureFinalChallengeLesson"
 
 
-const lessonCatalog = [functionCallLesson, 
-                        globalExecutionLesson, 
+const lessonCatalog = [ globalExecutionLesson,
+                        functionCallLesson,  
                         nestedFunctionsLesson,
                         timerAfterSynchronousCodeLesson,
                         zeroDelayTimerLesson,

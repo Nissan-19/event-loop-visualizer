@@ -31,7 +31,7 @@ function BrowserAPIs({currentBrowserApi}) {
               }
             }}
           >
-            {[...currentBrowserApi].reverse().map((browserApisItem, index) => (//making a copy of the array and reversing it so that visually it moves downward
+            {[...currentBrowserApi].reverse().map((browserApisItem) => (//making a copy of the array and reversing it so that visually it moves downward
               <motion.span
                 key={browserApisItem}
                 // Start above the frame's final position.
@@ -61,7 +61,7 @@ function BrowserAPIs({currentBrowserApi}) {
         {showEmptyMessage && currentBrowserApi.length === 0 && (
           <div>
             <p className="text-center ">
-              Browser Api is empty
+              Browser APIs is empty
             </p>
           </div>
         )}

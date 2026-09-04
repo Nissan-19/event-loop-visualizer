@@ -1,25 +1,19 @@
 import lessonCatalog from "../data/lessons/lessonCatalog"
 
-function LessonSelector({ selectedLessonId, handleLessonChange }) { //handlelessonchange updates the selectedlessonid
-  // Find the complete lesson object that is currently selected.
+function LessonSelector({ selectedLessonId, handleLessonChange }) { 
   const selectedLesson = lessonCatalog.find((lesson) => lesson.id === selectedLessonId)
 
-  // We do not store the topic separately.
-  // The selected lesson already tells us which topic it belongs to.
   const selectedTopic = selectedLesson.topicId
 
-  // Show only the exercises belonging to the current topic.
   const availableExercises = lessonCatalog.filter((lesson) => lesson.topicId === selectedTopic)
 
   function handleTopicChange(event) {
     const newTopic = event.target.value
 
-    // When the topic changes, select the first available lesson
-    // belonging to that topic.
-    const firstLesson = lessonCatalog.find((lesson) => lesson.topicId === newTopic) //out of the lesson catalaagoue find the first lesson whose topic id matches witht the new topic id
+    const firstLesson = lessonCatalog.find((lesson) => lesson.topicId === newTopic) 
 
     if (firstLesson) {
-      handleLessonChange(firstLesson.id) //and from that lesson send the id to handlelesson change which needs id to change
+      handleLessonChange(firstLesson.id) 
     }
   }
 

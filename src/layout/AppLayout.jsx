@@ -58,11 +58,11 @@ function AppLayout (){
     if(event.type === "ADD_BROWSER_API"){
       currentBrowserApi.push(event.label)
     }else if(event.type === "REMOVE_BROWSER_API"){
-      const itemIndex = currentBrowserApi.indexOf(event.label) //getting the index of the lable stored in browser api
+      const itemIndex = currentBrowserApi.indexOf(event.label) 
         if(itemIndex === -1){
           return
         }
-        currentBrowserApi.splice(itemIndex, 1)//startting at item index only remove 1 item
+        currentBrowserApi.splice(itemIndex, 1)
           }
   })
   
@@ -71,24 +71,24 @@ function AppLayout (){
     if(event.type === "ADD_TASK_QUEUE" ){
       currentTaskQueue.push(event.label)
     }else if(event.type === "REMOVE_TASK_QUEUE"){
-      const itemIndex = currentTaskQueue.indexOf(event.label) //getting the index of the lable stored in browser api
+      const itemIndex = currentTaskQueue.indexOf(event.label) 
        if(itemIndex === -1){
           return
         }  
-      currentTaskQueue.splice(itemIndex, 1)//startting at item index only remove 1 item
+      currentTaskQueue.splice(itemIndex, 1)
     }
   })
 
-  const currentMircrotask = []
+  const currentMicrotask = []
   executedActions.forEach((event)=>{
     if(event.type === "ADD_MICROTASK_QUEUE"){
-      currentMircrotask.push(event.label)
+      currentMicrotask.push(event.label)
     }else if(event.type === "REMOVE_MICROTASK_QUEUE"){
-      const itemIndex = currentMircrotask.indexOf(event.label)
+      const itemIndex = currentMicrotask.indexOf(event.label)
        if(itemIndex === -1){
           return
         }
-        currentMircrotask.splice(itemIndex, 1)
+        currentMicrotask.splice(itemIndex, 1)
     }
   })
 
@@ -183,7 +183,7 @@ function AppLayout (){
               currentCallStack = {currentCallStack}
               currentBrowserApi={currentBrowserApi}
               currentTaskQueue={currentTaskQueue}
-              currentMicrotask = {currentMircrotask}
+              currentMicrotask = {currentMicrotask}
              />
             <StepExplanation
 

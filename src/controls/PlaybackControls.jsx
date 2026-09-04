@@ -1,17 +1,17 @@
 function PlaybackControls({ currentStep, handleStepIncrement, handleStepDecrement, handleReset, lastStep, setIsPlaying, isPlaying}) {
 
 function Previous(){
-  setIsPlaying(false);
-  handleStepDecrement();
+  setIsPlaying(false)
+  handleStepDecrement()
 }
 function Next(){
-  setIsPlaying(false),
+  setIsPlaying(false)
   handleStepIncrement()
 }
 function Reset(){
-  setIsPlaying(false);
-  handleReset();
-}  
+  setIsPlaying(false)
+  handleReset()
+} 
   
 
   return (

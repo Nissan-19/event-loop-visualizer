@@ -53,8 +53,8 @@ function CodePanel({ codeLines, activeLineNumber }) {
           language="javascript"
           style={vscDarkPlus}
           showLineNumbers
-          wrapLines //SyntaxHighlighter treats all your code as one large bloc, warplines wraps every code line in its own HTML element:
-          lineProps={(lineNumber) => { //lineProps is a function that SyntaxHighlighter automatically runs for every wrapped line. It gives us that line’s number:
+          wrapLines 
+          lineProps={(lineNumber) => { 
             if(lineNumber === activeLineNumber){
               return{
                 className:"active-code-line block pl-3",

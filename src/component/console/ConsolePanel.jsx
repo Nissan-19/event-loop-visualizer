@@ -18,6 +18,7 @@ function ConsolePanel({currentConsoleOutput}) {
             <code
               key={index}
               className="console-typewriter"
+              aria-live="polite"
               style={{
                 "--character-count": output.length,
                 "--console-line-width": `${output.length}ch`,

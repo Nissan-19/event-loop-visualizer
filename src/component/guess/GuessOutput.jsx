@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 function GuessOutput({expectedOutput}) {
   const [userInput, setUserInput] = useState("")
@@ -36,9 +36,9 @@ function GuessOutput({expectedOutput}) {
       <textarea
         id="output-guess"
         rows="5"
-        aria-label="textarea"
+        aria-label="Guess the console output"
         value={userInput}
-        placeholder={"Write Your answer here"}
+        placeholder={"Write your answer here"}
         className="w-full resize-none rounded-md border border-slate-700 bg-[#0d1117] p-3 text-sm text-slate-100 outline-none placeholder:text-slate-600 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20"
         onChange={updateValue}
       />

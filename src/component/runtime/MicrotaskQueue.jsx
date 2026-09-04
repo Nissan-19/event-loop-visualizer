@@ -33,17 +33,13 @@ function MicrotaskQueue({currentMicrotask}) {
             {[...currentMicrotask].reverse().map((microtaskItem) => (
               <motion.span
                 key={microtaskItem}
-                // Start above the frame's final position.
-                // Each higher frame travels a slightly shorter distance.
+
                 initial={{ y: -50   }}
 
-                // Move down into the frame's normal position.
                 animate={{ y: 0 }}
 
-                // Move back upward before React removes the frame.
                 exit={{ y: 50 }}
 
-                // Control the duration and smoothness of both movements.
                 transition={{
                   duration: 0.7,
                   ease: "easeInOut",
@@ -56,11 +52,10 @@ function MicrotaskQueue({currentMicrotask}) {
           </AnimatePresence>
         </div>
 
-        {/* Show this only after the stack is empty and exits are complete. */}
         {showEmptyMessage && currentMicrotask.length === 0 && (
           <div>
             <p className="text-center">
-              Micro Task is empty
+              Microtask Queue is empty
             </p>
             <p className="text-center">
               (First In First Out)
